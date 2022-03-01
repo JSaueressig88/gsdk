@@ -214,13 +214,13 @@ If you already **had** an Init() function, go to check in [YourGameInstanceClass
     if (IsDedicatedServerInstance() == true)
     {
         FOnGSDKShutdown_Dyn OnGsdkShutdown;
-        OnGsdkShutdown.BindDynamic(this, &UShooterGameInstance::OnGSDKShutdown);
+        OnGsdkShutdown.BindDynamic(this, &U[YourGameInstanceClassName]::OnGSDKShutdown);
         FOnGSDKHealthCheck_Dyn OnGsdkHealthCheck;
-        OnGsdkHealthCheck.BindDynamic(this, &UShooterGameInstance::OnGSDKHealthCheck);
+        OnGsdkHealthCheck.BindDynamic(this, &U[YourGameInstanceClassName]::OnGSDKHealthCheck);
         FOnGSDKServerActive_Dyn OnGSDKServerActive;
-        OnGSDKServerActive.BindDynamic(this, &UShooterGameInstance::OnGSDKServerActive);
+        OnGSDKServerActive.BindDynamic(this, &U[YourGameInstanceClassName]::OnGSDKServerActive);
         FOnGSDKReadyForPlayers_Dyn OnGSDKReadyForPlayers;
-        OnGSDKReadyForPlayers.BindDynamic(this, &UShooterGameInstance::OnGSDKReadyForPlayers);
+        OnGSDKReadyForPlayers.BindDynamic(this, &U[YourGameInstanceClassName]::OnGSDKReadyForPlayers);
 
         UGSDKUtils::RegisterGSDKShutdownDelegate(OnGsdkShutdown);
         UGSDKUtils::RegisterGSDKHealthCheckDelegate(OnGsdkHealthCheck);
